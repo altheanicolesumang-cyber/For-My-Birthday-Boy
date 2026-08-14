@@ -1,0 +1,302 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Memories</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap');
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    background:#0a0a0a;
+    color:#f5f2ed;
+    font-family:'Cormorant Garamond',serif;
+    min-height:100vh;
+}
+
+body:before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    opacity:.08;
+    background-image:repeating-linear-gradient(
+        0deg,
+        #fff 0 1px,
+        transparent 1px 4px
+    );
+    z-index:10;
+}
+
+.fade{
+    animation:fade 1.3s ease both;
+}
+
+@keyframes fade{
+
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+
+    to{
+        opacity:1;
+        transform:none;
+    }
+
+}
+
+.wrap{
+    max-width:1050px;
+    margin:auto;
+    padding:45px 20px;
+    text-align:center;
+}
+
+h1{
+    font-size:52px;
+    letter-spacing:5px;
+    text-transform:uppercase;
+    margin:0 0 8px;
+    font-weight:600;
+}
+
+.red{
+    color:#c4001b;
+}
+
+.intro{
+    color:#aaa;
+    font-style:italic;
+    font-size:20px;
+    margin-bottom:35px;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+    align-items:start;
+}
+
+/* PHOTO FRAME */
+
+.photo{
+    background:#f4f1eb;
+    color:#161616;
+    padding:10px 10px 18px;
+    box-shadow:5px 8px 0 #b0001b55;
+    opacity:0;
+    animation:photoIn .8s ease forwards;
+    transition:.35s;
+}
+
+.photo:nth-child(1){
+    animation-delay:.2s;
+    transform:rotate(-2deg);
+}
+
+.photo:nth-child(2){
+    animation-delay:.4s;
+    transform:rotate(2deg);
+}
+
+.photo:nth-child(3){
+    animation-delay:.6s;
+    transform:rotate(-1deg);
+}
+
+.photo:nth-child(4){
+    animation-delay:.8s;
+    transform:rotate(2deg);
+}
+
+.photo:nth-child(5){
+    animation-delay:1s;
+    transform:rotate(-2deg);
+}
+
+.photo:nth-child(6){
+    animation-delay:1.2s;
+    transform:rotate(1deg);
+}
+
+@keyframes photoIn{
+
+    from{
+        opacity:0;
+        transform:translateY(70px) scale(.8) rotate(0);
+    }
+
+    to{
+        opacity:1;
+    }
+
+}
+
+/* PHOTO */
+
+.photo img{
+    display:block;
+    width:100%;
+    height:auto;
+    object-fit:contain;
+    filter:none;
+    border:1px solid #333;
+}
+
+/* HOVER */
+
+.photo:hover{
+    transform:translateY(-7px) rotate(0deg) scale(1.02);
+    box-shadow:8px 14px 0 #b0001b66;
+}
+
+/* CAPTION */
+
+.caption{
+    font-family:'Cormorant Garamond',serif;
+    font-size:17px;
+    line-height:1.3;
+    margin-top:12px;
+    font-weight:500;
+}
+
+/* NEXT VIDEO SENTENCE */
+
+.next-text{
+    color:#aaa;
+    font-style:italic;
+    font-size:18px;
+    margin-top:38px;
+    margin-bottom:0;
+}
+
+/* BACK */
+
+.back{
+    display:inline-block;
+    margin-top:20px;
+    color:#fff;
+    border:1px solid #c4001b;
+    padding:12px 25px;
+    text-decoration:none;
+    transition:.3s;
+    font-family:'Cormorant Garamond',serif;
+    font-size:17px;
+}
+
+.back:hover{
+    background:#c4001b;
+}
+
+/* TABLET */
+
+@media(max-width:700px){
+
+    .gallery{
+        grid-template-columns:1fr 1fr;
+        gap:22px;
+    }
+
+}
+
+/* PHONE */
+
+@media(max-width:480px){
+
+    .gallery{
+        grid-template-columns:1fr;
+    }
+
+    h1{
+        font-size:40px;
+    }
+
+    .photo img{
+        width:100%;
+        height:auto;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="wrap fade">
+
+    <h1>
+        Our <span class="red">Memories</span>
+    </h1>
+
+    <p class="intro">
+        Six little pieces of us.
+    </p>
+
+    <div class="gallery">
+
+        <div class="photo">
+            <img src="photo1.jpg">
+            <div class="caption">
+                our first vc… kinda crazy how far we’ve come.
+            </div>
+        </div>
+
+        <div class="photo">
+            <img src="photo2.jpg">
+            <div class="caption">
+                and this pic from our first meet? still my fav.
+            </div>
+        </div>
+
+        <div class="photo">
+            <img src="photo3.jpg">
+            <div class="caption">
+                the day i said yes to being your boyfriend… and somehow that led to our first monthsary.
+            </div>
+        </div>
+
+        <div class="photo">
+            <img src="photo4.jpg">
+            <div class="caption">
+                our first anniversary… and now look at us, 3 years later.
+            </div>
+        </div>
+
+        <div class="photo">
+            <img src="photo5.jpg">
+            <div class="caption">
+                more travels, more dates, more memories with you.
+            </div>
+        </div>
+
+        <div class="photo">
+            <img src="photo6.jpg">
+            <div class="caption">
+                and you’re still my favorite person to do life with.
+            </div>
+        </div>
+
+    </div>
+
+    <p class="next-text">
+        ready for the next video?
+    </p>
+
+    <a class="back" href="home.html">
+        ← BACK
+    </a>
+
+</div>
+
+</body>
+</html>
