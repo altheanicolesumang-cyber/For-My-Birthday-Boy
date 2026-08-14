@@ -1,0 +1,186 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A Little Video</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Special+Elite&display=swap');
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    background:#080808;
+    color:#f5f2ed;
+    font-family:'Cormorant Garamond',serif;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+body:before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    opacity:.08;
+    background-image:repeating-linear-gradient(
+        0deg,
+        #fff 0 1px,
+        transparent 1px 4px
+    );
+    z-index:10;
+}
+
+.fade{
+    animation:fade 1.3s ease both;
+}
+
+@keyframes fade{
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.wrap{
+    width:92%;
+    max-width:850px;
+    text-align:center;
+}
+
+.film{
+    background:#f3f0e9;
+    color:#111;
+    padding:35px;
+    border:8px solid #151515;
+    outline:1px solid #b0001b;
+    box-shadow:0 0 45px #b0001b33;
+    animation:film .9s ease both;
+}
+
+@keyframes film{
+    from{
+        opacity:0;
+        transform:scale(.85);
+        filter:blur(5px);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+        filter:blur(0);
+    }
+}
+
+h1{
+    letter-spacing:5px;
+    text-transform:uppercase;
+    margin-top:0;
+}
+
+.line{
+    height:2px;
+    background:#b0001b;
+    margin:20px 0;
+}
+
+/* VIDEO BOX */
+.video{
+    width:100%;
+    aspect-ratio:16 / 9;
+    background:#000;
+    border:5px solid #111;
+    overflow:hidden;
+    position:relative;
+}
+
+/* ACTUAL VIDEO */
+.video video{
+    width:100%;
+    height:100%;
+    display:block;
+    object-fit:contain;
+    background:#000;
+}
+
+.back{
+    display:inline-block;
+    margin-top:25px;
+    color:#fff;
+    text-decoration:none;
+    border:1px solid #b0001b;
+    padding:11px 24px;
+    transition:.3s;
+}
+
+.back:hover{
+    background:#b0001b;
+}
+
+@media(max-width:600px){
+
+    .film{
+        padding:20px;
+        border-width:5px;
+    }
+
+    h1{
+        font-size:27px;
+        letter-spacing:3px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="wrap fade">
+
+    <div class="film">
+
+        <h1>A song that will always be ours</h1>
+
+        <div class="line"></div>
+
+        <div class="video">
+
+            <video controls playsinline preload="metadata">
+
+                <source
+                    src="Stephen Sanchez - Until I Found You (Lyrics).mp4"
+                    type="video/mp4">
+
+                Your browser does not support the video tag.
+
+            </video>
+
+        </div>
+
+        <p>
+            <i>I picked this one just for you. Out of all the songs, this one just feels like us. Every time I hear it, it reminds me of you and all the little moments we’ve shared. So here’s our little favorite song, because of course, I had to choose something that reminds me of my favorite person.🎶
+
+Hope you like it, birthday boy. And yes, you better appreciate the effort because I’m being sweet for once.💋</i> 
+        </p>
+
+    </div>
+
+    <a class="back" href="index.html">
+        ← BACK
+    </a>
+
+</div>
+
+</body>
+</html>
